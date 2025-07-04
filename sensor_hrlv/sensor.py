@@ -2,8 +2,6 @@
 
 import sys
 import time
-import board
-import adafruit_dht
 import os
 import json
 
