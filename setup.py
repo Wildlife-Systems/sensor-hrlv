@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "sensor-dht11=sensor_dht11.sensor:cli",
+            "sensor-hrlv=sensor_hrlv.sensor:cli",
         ],
     },
     classifiers=[
