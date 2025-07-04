@@ -78,6 +78,9 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
     reads = 0
     total = 0
 
+    #Array to hold the sensor data
+    outjs = []
+
     while reads <= 20:
 
         try:
@@ -89,7 +92,8 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
 
             reads = reads + 1
 
-            total = total + range
+            #Add range to next slot in outjs
+            outjs.append(range)
 
         except KeyboardInterrupt:
 
@@ -111,6 +115,10 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
     outjs["value"] = value
     outjs["sensor_id"] = sensor_id
     outjs["internal"] = internal
+    outjs["config"] = {
+        "min_value": min(outjs),
+        "max_value": max(outjs)
+    }
 
     ret = "[" + json.dumps(outjs) + "]"
     return ret
