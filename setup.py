@@ -9,13 +9,10 @@ setup(
     url="https://github.com/yourusername/sensor-hrlv",
     packages=find_packages(),
     install_requires=[
-        "adafruit-circuitpython-dht",
-        "board",
-        "RPi.GPIO"
     ],
     entry_points={
         "console_scripts": [
-            "sensor-dht11=sensor_dht11.sensor:cli",
+            "sensor-hrlv=sensor_hrlv.sensor:cli",
         ],
     },
     classifiers=[
