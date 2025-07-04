@@ -2,6 +2,9 @@
 
 ## Installation instructions
 
+Add the [Wildlife Systems APT repository](https://wildlife.systems/apt-configuration.html).
+
 ```
-wget -O - https://raw.githubusercontent.com/Wildlife-Systems/sensor-hrlv/main/install | sudo bash
+sudo apt update
+sudo apt install sensor-hrlv
 ```
