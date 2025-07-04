@@ -1,0 +1,6 @@
+sensor-hrlv.*.debhelper
+sensor-hrlv.substvars
+sensor-hrlv/
+sensor-hrlv-*/
+files
+debhelper-build-stamp
