@@ -12,7 +12,7 @@ def get_serial_number():
         with open("/proc/cpuinfo", "r") as f:
             for line in f:
                 if line.startswith("Serial"):
-                    return line.split(":")[1].strip() + "_dht11"
+                    return line.split(":")[1].strip() + "_hrlv"
     except FileNotFoundError:
         print("Error: Unable to access /proc/cpuinfo. Are you running this on a Raspberry Pi?")
         return None
