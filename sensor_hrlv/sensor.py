@@ -4,6 +4,7 @@ import sys
 import time
 import os
 import json
+import serial
 
 def get_serial_number():
     """Retrieve the Raspberry Pi's serial number."""
@@ -73,9 +74,6 @@ def read_sensor():
         return
 
 def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
-    import json
-    import os
-    import serial
 
     reads = 0
     total = 0

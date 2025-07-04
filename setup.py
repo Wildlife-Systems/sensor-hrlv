@@ -9,7 +9,7 @@ setup(
     url="https://github.com/yourusername/sensor-hrlv",
     packages=find_packages(),
     install_requires=[
-        "serial"
+        "pyserial"
     ],
     entry_points={
         "console_scripts": [
