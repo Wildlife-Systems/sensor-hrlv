@@ -15,8 +15,6 @@
 	
 export DH_VENV_ARGS=--setuptools --builtin-venv --python=$(SNAKE) $(EXTRA_REQUIREMENTS) --use-system-packages
 
-override_dh_shlibdeps:
-	dh_shlibdeps --exclude=adafruit_blinka
 
 %:
 	dh $@ --with python-virtualenv
