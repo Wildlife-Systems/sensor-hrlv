@@ -79,7 +79,7 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
     total = 0
 
     #Array to hold the sensor data
-    outjs = []
+    s_data = []
 
     while reads <= 20:
 
@@ -93,7 +93,7 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
             reads = reads + 1
 
             #Add range to next slot in outjs
-            outjs.append(range)
+            s_data.append(range)
 
         except KeyboardInterrupt:
 
@@ -103,7 +103,7 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
 
             continue
 
-    value = round(total/reads, 1)/1000
+    value = round(sum(s_data)/(1000* len(s_data)), 2)
 
     stream = os.popen('sc-prototype')
     output = stream.read()
@@ -116,8 +116,8 @@ def read_sensor_helper(internal=False, sensor_id=get_serial_number()):
     outjs["sensor_id"] = sensor_id
     outjs["internal"] = internal
     outjs["config"] = {
-        "min_value": min(outjs),
-        "max_value": max(outjs)
+        "min_value": min(s_data)/1000,
+        "max_value": max(s_data)/1000
     }
 
     ret = "[" + json.dumps(outjs) + "]"
